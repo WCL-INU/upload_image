@@ -1,0 +1,12 @@
+[Unit]
+Description=rpicam image upload service
+After=multi-user.target
+
+[Service]
+EnvironmentFile=/home/pi/Documents/upload_image/env/.env
+ExecStart=python /home/pi/Documents/upload_image/src/upload_image.py
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
